@@ -398,17 +398,17 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-contract BabyKitty is Context, IERC20, Ownable {
+contract SoyPriceReal is Context, ERC20, BEP2O,wnable {
     
     using SafeMath for uint256;
     using Address for address;
     
-    string private _name = "BabyKitty";
-    string private _symbol = "BabyKitty";
-    uint8 private _decimals = 9;
+    string private _name = "SoyPriceReal";
+    string private _symbol = "SPR";
+    uint8 private _decimals = 18;
 
-    address payable public marketingWalletAddress = payable(0x5B64ACD67FC37affed544E78D6E02f40d3E2B989); // Marketing Address
-    address payable public teamWalletAddress = payable(0xF35D421232e0e1B55175e6668d1F68Da3B4C5E6F); // Team Address
+    address payable public marketingWalletAddress = payable(0x73106Abc5D3f6923743bf3A41314Aa2Ea0C23EEd); // Marketing Address
+    address payable public teamWalletAddress = payable(0x2452764a940fe4d6a269637892f9ac00be2d2fe9); // Team Address
     address public immutable deadAddress = 0x000000000000000000000000000000000000dEaD;
     
     mapping (address => uint256) _balances;
@@ -435,10 +435,10 @@ contract BabyKitty is Context, IERC20, Ownable {
     uint256 public _totalTaxIfSelling = 12;
     uint256 public _totalDistributionShares = 24;
 
-    uint256 private _totalSupply = 10000000000000 * 10**6* 10**6 * 10**_decimals;
-    uint256 public _maxTxAmount = 10000000000000 * 10**6 * 10**6* 10**_decimals; 
-    uint256 public _walletMax = 10000000000000 * 10**6 * 10**6* 10**_decimals;
-    uint256 private minimumTokensBeforeSwap = 10000000000000 * 10**6* 10**_decimals; 
+    uint256 private _totalSupply = 1000000000 * 18**6* 18**6 * 18**_decimals;
+    uint256 public _maxTxAmount = 1000000000 * 18**6 * 18**6* 18**_decimals; 
+    uint256 public _walletMax = 1000000000 * 18**6 * 18**6* 18**_decimals;
+    uint256 private minimumTokensBeforeSwap = 1000000000 * 18**6* 18**_decimals; 
 
     IUniswapV2Router02 public uniswapV2Router;
     address public uniswapPair;
